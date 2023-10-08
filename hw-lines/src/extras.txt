@@ -1,0 +1,13 @@
+CSE 331 Homework.  Answers to written questions.
+Edit this file to supply your answers.
+
+Name: Kirupa Gunaseelan
+
+Describe any additional functionality you added to your application, or any
+significant changes you made to the starter code beyond the basic requirements
+of the assignment, below:
+
+I created an Edge interface to store the data that was entered by the user (coordinates of the
+edge and its color).
+
+

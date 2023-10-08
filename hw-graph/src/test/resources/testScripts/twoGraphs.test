@@ -1,0 +1,21 @@
+# Checks that two graphs can be created and are independent
+
+# Create a graph
+CreateGraph graph1
+CreateGraph graph2
+
+# Add nodes to each graph
+AddNode graph1 n1
+AddNode graph1 n2
+AddNode graph2 m1
+AddNode graph2 m2
+
+# Add edges to each graph
+AddEdge graph1 n1 n2 e1
+AddEdge graph2 m1 m2 e2
+
+# Print the nodes in the graph and the outgoing edges from n1 and m1
+ListNodes graph1
+ListChildren graph1 n1
+ListNodes graph2
+ListChildren graph2 m1

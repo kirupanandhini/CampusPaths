@@ -1,0 +1,58 @@
+## CSE 331 hw-setup Questions
+## Part 7: Answering Questions About the Code
+
+1. Why did Fibonacci fail the testThrowsIllegalArgumentException< test? What (if anything) did
+you have to do to fix it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed this test because it threw an IllegalArgumentException when the input n
+was 0, even though the method was only supposed to throw an IllegalArgumentException when
+the input was negative. I fixed this by changing the condition in the if statement to n < 0
+in order to throw the IllegalArgumentException.
+
+2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix
+it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the testBaseCase test because 0 is considered negative in the code, when
+it is a non-negative number. Thus, n = 0, throws an IllegalArgumentException. We fixed this
+by changing the if condition to n < 0.
+
+3.Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to
+fix it? If you did not have to change anything to fix this issue, explain why.
+
+Since Fibonacci is uses recursion to sum up the previous terms in a sequence, the base case
+should be the first (or nth) term. However, the base case included both the first and second
+term (n <=2).Fibonacci failed the testInductiveCase test because it n = 2 returned 1. getFibTerm(2)
+returned 1,when it was supposed to return 1 + (getFibTerm(1)), which returns 2. We fixed this
+by changing the condition in the base case to else if (n < 2). By fixing
+the base call so that only n = 1 returns 1, and ensuring that the recursion worked, we
+fixed the testInductiveCase.
+
+## Part 8: Debugger Tutorial
+
+1. What are the values of "x", "y", and "sum" printed by your statement? Why was x not equal 
+to the first integer entered here, and how could we fix this?
+
+x = 4, y = 4, and sum = 0. x is not equal to our first input (5) because x = 2 * (input / 2).
+Because of integer division, input/2 is 2. 2 * 2 is 4. However, this is different from 5, our
+original input. We can fix this by not manipulating the information that is inputted and
+setting x equal to the input (5).
+
+2. What are all the names and values listed in the “Variables” panel? What does the “frames” 
+tab list as the current method and line number? (Write down the text that was highlighted when 
+the Debug perspective first opened.)
+
+x = 3
+y = 4
+Current method and line number: computeSum43, Adder (setup)
+The method is computeSum and the line number is 43.
+
+3. What are all the names and values listed in the “Variables” panel after each of the two step overs?
+
+Step 1:
+x = 3
+y = 4
+
+Step 2:
+x = 3
+y = 4
+sum = -1

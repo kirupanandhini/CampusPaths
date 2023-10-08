@@ -1,0 +1,64 @@
+## CSE 331 HW6 Questions
+
+NOTE: This file is used as part of HW6, and is not due as part of the HW5
+submission. You may leave it blank for HW5.
+
+## Part 1
+###########################################################################
+
+A few examples of possible Graph representations:
+
+    A: A collection of nodes and a collection of edges.
+    B: An adjacency list, in which each node is associated with a list of its outgoing edges.
+    C: An adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of nodes, whether there 
+       is a link from A to B, and how many.
+
+1. In two or three sentences, explain an advantage and a disadvantage of each of the
+representations listed above (for example, in terms of runtime complexity, space
+complexity, or ease of implementation).
+
+Representation A has an advantage in that it would be easy to get the list of nodes and edges in
+a graph, but it would be hard to get the relationships between parent and child nodes, since
+there's no link between the two collections. Representation B makes it easy to get the children
+and edges of a parent node, however since the relationship is typically one way, it's hard to
+get the parent nodes from child nodes. Representation C has high space complexity because we are
+creating a matrix which will create (# of nodes)^2 collections, but it will bt easy to determine
+if two nodes are adjacent.
+
+
+2. In two to three sentences, describe the representation you chose and explain why you
+chose it. If you chose to use a different representation than one of the three we described
+above, be sure to list its advantages and disadvantages, too.
+
+I chose representation B. I thought it would be the easiest to implement, given my background
+in sets and maps from 143. Additionally, it has constant run time complexity for many of its
+methods, which makes it relatively efficient.
+
+
+
+
+## Part 4
+###########################################################################
+
+    (Please keep your answers brief and to-the-point.)
+
+1. Describe any new tests you added and why you added them, or why you feel that your original
+tests alone are sufficient.
+- I tested graphs with the same edge added twice to ensure the rep invariant would not get violated
+- I added exceptions (no nulls) so I added those to my JUnit tests.
+
+
+
+2. Did you make any changes to your specifications as you were implementing your Graph? (yes/no)
+If yes, describe your changes and why you made them.
+
+Yes.
+- InsertEdge/InsertNode/ContainsNode methods take in nodes instead of strings to be consistent
+  with my other methods (edge constructor).
+- Change ListChildren() to ListOfEdges() of a parentNode, so clients can also access
+  childNode and edgeLabel for a parentNode (use in testDriver).
+- Equals/hashCode to Node and Edge to distinguish them in the graph
+- Got rid of methods client wouldn't need (toString).
+- NullPointerException for parameter values that were null.
+
+

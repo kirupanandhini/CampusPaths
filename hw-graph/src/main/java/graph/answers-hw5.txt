@@ -1,0 +1,54 @@
+## CSE 331 hw-graph Coding Questions
+
+## Part 2
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+Operations of my graph ADT:
+
+I made a class called Graph to represent my directed labeled graph ADT. It has a constructor
+because we need some way to create a graph. Graph also has methods to add nodes and edges. Since
+we start out with an empty graph, it's important that the class has methods one can use to
+add nodes and edges to the graph. This is also the reason I made my graph mutable. I also include
+listNodes and listChildren, which are methods that return a list of the appropriate nodes in
+this Graph. I included these because the instructions mentioned that we may need a way to
+iterate through our graph and I thought this would be sufficient. I also have methods for
+contains node and contains edge, so we can check to see if we are truly adding unique
+edges and nodes to our graph. Lastly, I have a toString method to summarize the number of
+nodes and edges in our graph, in case that information is important later on. I also included
+a Node class and an Edge class in my Graph. I made this in the beginning to avoid confusing with
+Strings representing both Nodes and Edges. Node has a getNodeLabel method which returns its
+unique label and Edge has methods that return its parent node, its child node, and its
+unique label. I created these methods because we might need to use the Nodes' and Edges'
+data in our Graph implementation.
+
+TODO: Your answer here!
+
+
+## Part 3
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+
+My testing strategy for my script tests were to come up with as many types of graphs
+as I got. I drew different types of graphs in my notebook and tried to see which method
+calls I'd want to focus on testing for each graph.
+
+My testing strategy for my Junit tests was to examine the behavior of the methods I was
+not able to test in my script tests, in to divide the behavior into subdomains. By doing so,
+I was able to test different types of inputs that hopefully represent a wide range
+of values.
+
+My script tests focus on graphs as a whole while my JUnit tests focus on individual methods.
+This is because our script tests test the creation of graphs and the listNodes and
+listChildren methods. They don't test methods such as contains, toString, and they don't
+seem to test exceptions. This is why I focused on testing contains, toString, and exceptions
+in methods in my JUnit tests.
+
+
+TODO: Your answer here!
